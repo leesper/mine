@@ -1,0 +1,2 @@
+class ExtremumModel:
+    pass
