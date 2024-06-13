@@ -22,7 +22,7 @@ def parse_arguments(args):
     parser.add_argument('-s', type=lambda s: datetime.time.fromisoformat(s))
     parser.add_argument('-w', type=int)
     parser.add_argument('-t', type=float)
-    parser.add_argument('-f')
+    parser.add_argument('-f', type=str)
     arguments = Arguments()
     parser.parse_args(args, namespace=arguments)
     return arguments
