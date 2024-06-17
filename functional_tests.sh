@@ -15,4 +15,9 @@
 # --mov 采用移动均线爬坡法计算数据
 # -w 设置日滑动窗口大小
 # -t 设置阈值
-python mine.py --mov -w 5 -t 0.001 -f ./data.xlsx
+# python mine.py --mov -w 5 -t 0.001 -f ./data.xlsx
+
+# --sta 采用STA/LTA法计算数据
+# -w 设置LTA日滑动窗口大小
+# -t 设置阈值
+python mine.py --sta -w 15 -t 0.12 -f ./data.xlsx

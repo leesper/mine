@@ -1,6 +1,6 @@
 import argparse
-from models import ExtremumModel, VarianceModel, MovingAverageModel
-from datetime import time, datetime
+from models import ExtremumModel, VarianceModel, MovingAverageModel, StaLtaModel
+from datetime import datetime
 import openpyxl
 
 class Miner:
@@ -11,6 +11,8 @@ class Miner:
             self.model = VarianceModel(args.w, args.t)
         elif args.mov:
             self.model = MovingAverageModel(args.w, args.t)
+        elif args.sta:
+            self.model = StaLtaModel(args.w, args.t)
         self.filename = args.f
     def calculate(self):
         data_sheet = openpyxl.load_workbook(self.filename).worksheets[0]
@@ -30,6 +32,7 @@ def parse_arguments(args):
     parser.add_argument('--ext', action='store_true')
     parser.add_argument('--var', action='store_true')
     parser.add_argument('--mov', action='store_true')
+    parser.add_argument('--sta', action='store_true')
     parser.add_argument('-w', type=int)
     parser.add_argument('-t', type=float)
     parser.add_argument('-f', type=str)
